@@ -1,0 +1,72 @@
+<ItemLabel@Label>:
+    font_size: '25sp'
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
+
+
+<Container>:
+    rows: 3
+    
+    text_input: text_input
+    value1: value1
+    value2: value2
+    value3: value3
+    value4: value4
+    value5: value5
+
+    AnchorLayout:
+        anchor_y: 'top'
+        size_hint: 1, 0.15
+        
+    TextInput:
+        id: text_input
+        multiline: False
+        font_size:'45sp'
+        input_type:'number'
+        input_filter:'int'
+
+    GridLayout:
+        cols: 2
+        padding: [50, 0, 0, 0]
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.5 , 1
+            ItemLabel:
+                text: 'Picanha'
+            ItemLabel:
+                text:'Tomate'
+            ItemLabel:
+                text: 'Cebola'
+            ItemLabel:
+                text:'Maminha'
+            ItemLabel:
+                text:'Batata'
+                
+        BoxLayout:
+            orientation: 'vertical'
+            ItemLabel:
+                id: value1
+                text: '0'
+            ItemLabel:
+                id: value2
+                text:'0'
+            ItemLabel:
+                id:value3
+                text: '0'
+            ItemLabel:
+                id:value4
+                text: '0'
+            ItemLabel:
+                id:value5
+                text: '0'
+
+    BoxLayout:
+        size_hint: 0.9, 0.15
+        padding: [30, 0, 30, 20]
+        
+        Button:
+            text: 'GO!'
+            on_release:
+                root.calculate()
